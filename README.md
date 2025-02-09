@@ -1,6 +1,35 @@
 # alph_HRM
 A human resources management system by Alpha Systems
 
+## Folder structure
+
+### 1️⃣ `app/` – Main Application Logic
+- `controllers/` → Handles requests & business logic (e.g., EmployeeController.php)
+- `models/` → Defines database interactions (e.g., Employee.php)
+- `views/` → Contains UI templates (e.g., employees/list.php)
+- `config/` → Stores database & app config files
+- `helpers/` → Stores helper functions
+- `routes.php` → Defines application routes
+
+### 2️⃣ `public/` – Frontend & Entry Point
+- `assets/` → Stores CSS, JavaScript, images
+- `index.php` → Main entry point for the app
+
+### 3️⃣ `core/` – Framework Core
+- `Database.php` → Handles database connections
+- `Controller.php` → Base controller for all controllers
+- `Model.php` → Base model for all models
+- `View.php` → Handles rendering of views
+
+### 4️⃣ `storage/` – File Storage
+- Stores uploaded documents (e.g., employee CVs, payslips)
+
+### 5️⃣ Other Files
+- `.env` → Environment variables
+- `composer.json` → PHP dependencies
+- `.htaccess` → URL rewriting
+
+## App modules
 ### ✅ Employee Management
 - Add, update, delete employees
 - View employee details
@@ -30,3 +59,4 @@ A human resources management system by Alpha Systems
 - Employee statistics
 - Payroll summary reports
 - Attendance insights
+

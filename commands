@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#folder dir structure create
+mkdir app app/controllers app/models app/views app/config app/helpers
+mkdir public public/assets public/assets/css public/assets/js public/assets/images
+mkdir core storage storage/uploads tests
+touch public/index.php .env routes.php composer.json README.md

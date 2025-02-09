@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Stage all changes (including deletions)
+git add -A
+
+# Check if there are any staged changes
+if git diff --cached --quiet; then
+    echo "No changes to commit."
+    exit 0
+fi
+
+# Prompt for commit message
+read -p "Enter commit message: " commit_msg
+
+# Ensure commit message is not empty
+if [[ -z "$commit_msg" ]]; then
+    echo "Commit message cannot be empty."
+    exit 1
+fi
+
+# Commit and push changes
+git commit -m "$commit_msg"
+git push --verbose
