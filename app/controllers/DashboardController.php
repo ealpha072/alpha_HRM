@@ -1,14 +1,19 @@
 <?php
 require_once __DIR__ . "/../../core/Controller.php";
+require_once __DIR__ . "../../models/Employee.php";
+
 
 class DashboardController extends Controller {
     public function index() {
+        $employeeModel = new Employee();
+        $totalEmployee = $employeeModel->countEmployee();
         // Example data (replace with real database queries)
+
         ob_start(); // Start output buffering
         ?>
         <h2>Welcome to Alpha HRMS</h2>
         <p>This is a custom message generated in the controller.</p>
-        <?php
+        <p>Total employees: <?php $totalEmployee ?></p><?php
         $custom_html = ob_get_clean(); // Store and clean buffer
 
         $data = [

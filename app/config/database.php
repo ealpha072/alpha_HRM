@@ -1,21 +1,38 @@
 <?php
-class Database {
-    private $host = "localhost";
-    private $db_name = "hrms_db";
-    private $username = "root";
-    private $password = "";
-    public $conn;
 
-    public function getConnection() {
-        $this->conn = null;
-        try {
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected to database";
-        } catch (PDOException $exception) {
-            echo "Database connection error: " . $exception->getMessage();
+class Database {
+    private static $instance = null;
+    private $pdo;
+
+    private function __construct()
+    {
+        $dbPath = __DIR__ . "../../../hrm_database.db";
+
+        if (!file_exists($dbPath)) {
+            die("Error: Database file not found at $dbPath");
         }
-        return $this->conn;
+
+        try {
+            $this->pdo = new PDO("sqlite:" . $dbPath);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Connection successfull";
+        } catch (PDOException $e) {
+            die("Database connection failed: " . $e->getMessage());
+        }
+    }
+
+    public static function getInstance(){
+        if(!self::$instance){
+            self::$instance= new Database();
+        }
+        echo "Self instance created";
+        return self::$instance->pdo;
+    }
+
+    public function query($sql, $params = []){
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+        return $stmt;
     }
 }
 ?>
