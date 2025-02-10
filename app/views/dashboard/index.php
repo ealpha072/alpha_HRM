@@ -11,33 +11,39 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
 
             <ul class="list-unstyled components">
                 <li class="">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employee Management</a>
+                    <ul class="collapse list-unstyled" id="employeeSubmenu">
                         <li>
-                            <a href="#">Home 1</a>
+                            <a href="#">Add Employee</a>
                         </li>
                         <li>
-                            <a href="#">Home 2</a>
+                            <a href="#">Edit Employee</a>
                         </li>
                         <li>
-                            <a href="#">Home 3</a>
+                            <a href="#">View Employee</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="#leaveSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Leave Management</a>
+                    <ul class="collapse list-unstyled" id="leaveSubmenu">
+                        <li>
+                            <a href="#">Requests and Approval</a>
+                        </li>
+                        <li>
+                            <a href="#">Leave Reports</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Payroll Management</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="#">Payslip</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
+                            <a href="#">Pay Calculation</a>
                         </li>
                     </ul>
                 </li>

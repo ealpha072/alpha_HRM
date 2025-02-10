@@ -45,10 +45,6 @@ A human resources management system by Alpha Systems
 - Payslip generation
 - Tax & benefits calculations
 
-### ✅ Performance Management
-- Employee evaluations
-- Goal setting & tracking
-- Performance reports
 
 ### ✅ User Roles & Authentication
 - Admin, HR, and Employee roles
