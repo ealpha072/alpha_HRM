@@ -13,7 +13,7 @@ class DashboardController extends Controller {
         ?>
         <h2>Welcome to Alpha HRMS</h2>
         <p>This is a custom message generated in the controller.</p>
-        <p>Total employees: <?php $totalEmployee ?></p><?php
+        <p>Total employees: <?php var_dump($totalEmployee) ?></p><?php
         $custom_html = ob_get_clean(); // Store and clean buffer
 
         $data = [

@@ -15,7 +15,7 @@ class Database {
         try {
             $this->pdo = new PDO("sqlite:" . $dbPath);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connection successfull";
+            //echo "Connection successfull";
         } catch (PDOException $e) {
             die("Database connection failed: " . $e->getMessage());
         }
@@ -25,7 +25,6 @@ class Database {
         if(!self::$instance){
             self::$instance= new Database();
         }
-        echo "Self instance created";
         return self::$instance->pdo;
     }
 

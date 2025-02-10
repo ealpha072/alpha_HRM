@@ -13,7 +13,7 @@ class Employee{
         $stmt = "SELECT * FROM ppp";
         $res = $this->db->query($stmt);
         $row = $res->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($row);
+        return $row;
         //return $row['total'] ?? 0;
         /*$result = $this->db->query("SELECT * from ppp");
         $row = $result->fetch(PDO::FETCH_ASSOC);
