@@ -1,12 +1,12 @@
 <?php
 $uri = $_SERVER['REQUEST_URI'];
 
-if ($uri == "/alpha_HRM/public/" || $uri == "/alpha_HRM/public/index.php") {
+if (str_contains($uri, "public/")) {
     require_once "app/controllers/DashboardController.php";
     $controller = new DashboardController();
     $controller->index();
-} elseif ($uri == "/employees") {
-    echo $uri;
+} elseif (str_contains($uri, "public/employee/add")) {
+    echo "We are here";
     //require_once "app/controllers/EmployeeController.php";
     //$controller = new EmployeeController();
     //$controller->index();
