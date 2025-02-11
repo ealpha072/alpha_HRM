@@ -10,48 +10,49 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
             </div>
 
             <ul class="list-unstyled components">
+                <li>
+                    <a href="#"><i class="fas fa-server mr-2"></i>Admin Dashboard</a>
+                </li>
                 <li class="">
-                    <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employee Management</a>
+                    <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user-circle mr-2"></i> Staff</a>
                     <ul class="collapse list-unstyled" id="employeeSubmenu">
                         <li>
-                            <a href="#">Add Employee</a>
+                            <a href="#"><i class="fa fa-user-plus fa-sm mr-2"></i>Add Staff</a>
                         </li>
                         <li>
-                            <a href="#">Edit Employee</a>
-                        </li>
-                        <li>
-                            <a href="#">View Employee</a>
+                            <a href="#"><i class="fa fa-user-plus fa-sm mr-2"></i>Staff Details</a>
                         </li>
                     </ul>
                 </li>
                 
                 <li>
-                    <a href="#leaveSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Leave Management</a>
+                    <a href="#leaveSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Leave Tracker</a>
                     <ul class="collapse list-unstyled" id="leaveSubmenu">
                         <li>
-                            <a href="#">Requests and Approval</a>
+                            <a href="#">Add Leave</a>
                         </li>
                         <li>
-                            <a href="#">Leave Reports</a>
+                            <a href="#">Employee Leave</a>
                         </li>
+                        
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Payroll Management</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Settings</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Payslip</a>
+                            <a href="#">Organization Details</a>
                         </li>
                         <li>
-                            <a href="#">Pay Calculation</a>
+                            <a href="#">Department</a>
+                        </li>
+                        <li>
+                            <a href="#">Designation</a>
+                        </li>
+                        <li>
+                            <a href="#">Leave Types</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
                 </li>
             </ul>
 
