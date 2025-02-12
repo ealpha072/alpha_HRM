@@ -5,8 +5,7 @@ class Controller {
         return new $model();
     }
 
-    public function view( $view, $data = [] ) {
-        extract($data);
+    public function view( $view) {
         require_once __DIR__ . "/../app/views/$view.php";
     }
 }
