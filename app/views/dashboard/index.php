@@ -17,14 +17,14 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
                     <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user-circle mr-2"></i> Staff</a>
                     <ul class="collapse list-unstyled" id="employeeSubmenu">
                         <li>
-                            <a href="employee/add"><i class="fa fa-user-plus fa-sm mr-2"></i>Add Staff</a>
+                            <a href="employees/add"><i class="fa fa-user-plus fa-sm mr-2"></i>Add Staff</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-user-plus fa-sm mr-2"></i>Staff Details</a>
                         </li>
                     </ul>
                 </li>
-                
+
                 <li>
                     <a href="#leaveSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Leave Tracker</a>
                     <ul class="collapse list-unstyled" id="leaveSubmenu">
