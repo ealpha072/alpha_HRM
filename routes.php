@@ -11,10 +11,8 @@ if ($uri === "/alpha_HRM/public/") {
     $dbcontroller = new DashboardController();
     $employeecontroller = new EmployeeController();
     $dbcontroller->index();
-    ob_start();
-
     $employeecontroller->add();
-    $content = ob_get_clean();
+    require_once __DIR__ . "./public/assets/footer.php";
 } else {
     echo "<br>";
     echo "404 - Page Not Found";

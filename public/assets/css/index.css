@@ -123,11 +123,18 @@ ul ul a {
 
 #content {
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     min-height: 100vh;
     transition: all 0.3s;
 }
 
+.wrapper_main h5{
+    font-size: 0.8rem;
+}
+
+.wrapper_main form{
+    font-size: 1rem;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */

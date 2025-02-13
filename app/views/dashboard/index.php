@@ -82,9 +82,3 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
             </nav>
 
             <div class="wrapper_main content">
-                <?php echo $content; ?>
-            </div>
-
-<?php
-require_once __DIR__ . "../../../../public/assets/footer.php";  // Include header if exists
-?>
