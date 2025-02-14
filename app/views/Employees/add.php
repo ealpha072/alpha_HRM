@@ -107,7 +107,6 @@
                     <div class="submit">
                         <button class="btn btn-primary" type="submit" name="add-student" id="addnewstudent"><i class="fa fa-plus-circle fa-sm"></i> Add Student</button>
                     </div>
-
                 </div>
             </form>
             <!--END OF FORM-->

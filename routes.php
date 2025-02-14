@@ -4,7 +4,8 @@ $uri = $_SERVER['REQUEST_URI'];
 if ($uri === "/alpha_HRM/public/") {
     require_once "app/controllers/DashboardController.php";
     $controller = new DashboardController();
-    $controller->index("<h1>Hello world</h1>");
+    $controller->index();
+    require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/employees/add") {
     require_once "app/controllers/DashboardController.php";
     require_once "app/controllers/EmployeeController.php";
