@@ -1,6 +1,4 @@
-<?php
-echo $_SERVER['REQUEST_URI'];
-?>
+
 <div class="">
     <div class="card">
         <div class="card-header">

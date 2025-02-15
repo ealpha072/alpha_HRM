@@ -8,9 +8,10 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
     $controller->index();
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/employees") {
-    
-    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-        echo "Form has been received";
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_employee'])){
+        
+        
     }
 
     require_once "app/controllers/DashboardController.php";
