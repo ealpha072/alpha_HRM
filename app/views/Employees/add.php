@@ -1,3 +1,6 @@
+<?php
+echo $_SERVER['REQUEST_URI'];
+?>
 <div class="">
     <div class="card">
         <div class="card-header">
@@ -7,7 +10,7 @@
         </div>
         <div class="card-body">
             <!--form for admitting new student-->
-            <form action="" method="POST" enctype="multipart/form-data" id="add_employee_form">
+            <form action="<?php $_SERVER['REQUEST_URI'] ?>" method="POST" enctype="multipart/form-data" id="add_employee_form">
                 <!--personal card info-->
                 <div class="form-div personal_info">
 
@@ -53,15 +56,13 @@
                         <div class="col-sm-4">
                             <input type="file" class="form-control form-control-sm" name="photo">
                         </div>
-
-                        
                     </div>
 
                 </div>
                 <!-- END OF CARD-->
 
                 <!--conatct info card-->
-                <div class="form-div work_info">
+                <!-- <div class="form-div work_info">
 
                     <h6>Work Information</h6>
                     <div class="form-group row">
@@ -101,7 +102,7 @@
                             <input type="text" class="form-control form-control-sm" name="department" required>
                         </div>
 
-                    </div>
+                    </div>-->
                     <hr>
                     <div class="submit">
                         <button class="btn btn-primary" name="add_employee" type="submit" id="add_employee"><i class="fa fa-plus-circle fa-sm"></i> Add Employee</button>

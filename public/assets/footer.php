@@ -12,8 +12,8 @@
     <script>
         console.log('Hello world')
         $(document).ready(function () {
-            $("#add_employee_form").on('submit', function(e){
-                e.preventDefault()
+            $("#add_employee_form").on('submit', function(){
+                //e.preventDefault()
                 console.log("This has been submitted");
                 var arr = $(this).serializeArray()
                 console.log(arr);

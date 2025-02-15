@@ -2,21 +2,6 @@
 require_once __DIR__ . "../../config/database.php";
 
 
-trait employee_features
-{
-    public $first_name = "";
-    public $last_name = "";
-    public $personal_email = "";
-    public $gender = "";
-    public $phone_number = "";
-    public $photo = "";
-    public $employee_id = "";
-    public $employee_type = "";
-    public $employee_level = "";
-    public $date_of_joining = "";
-    public $department = "";
-};
-
 class Employee{
     private $db;
 

@@ -7,7 +7,7 @@ class Model {
 
     public function __construct() {
         $database = new Database();
-        $this->db = $database->getConnection();
+        //$this->db = $database->getConnection();
     }
 
     public function query($sql, $params = []) {

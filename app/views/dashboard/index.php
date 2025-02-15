@@ -11,13 +11,13 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="#"><i class="fas fa-server mr-2"></i>Admin Dashboard</a>
+                    <a href="home"><i class="fas fa-server mr-2"></i>Admin Dashboard</a>
                 </li>
                 <li>
                     <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user-circle mr-2"></i> Staff</a>
                     <ul class="collapse list-unstyled" id="employeeSubmenu">
                         <li>
-                            <a href="employees/add"><i class="fa fa-user-plus fa-sm mr-2"></i>Add Staff</a>
+                            <a href="employees"><i class="fa fa-user-plus fa-sm mr-2"></i>Add Staff</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-user-plus fa-sm mr-2"></i>Staff Details</a>
@@ -67,11 +67,8 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
                     </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    <div class="" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Logout</a>
