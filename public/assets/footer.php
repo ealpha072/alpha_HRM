@@ -10,15 +10,20 @@
     <script src="../../../alpha_HRM/public/assets/js/wrapper.js"></script>
 
     <script>
-        /*console.log('Hello world')
+        console.log('Hello world')
         $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });*/
+            $("#add_employee_form").on('submit', function(e){
+                e.preventDefault()
+                console.log("This has been submitted");
+                var arr = $(this).serializeArray()
+                console.log(arr);
+            })
+        });
         setTimeout(function () {
             $(".alert").alert('close');
         }, 10000);
+
+        
         
     </script>
 </body>

@@ -14,6 +14,11 @@ if ($uri === "/alpha_HRM/public/") {
     $dbcontroller->index();
     $employeecontroller->add();
     require_once __DIR__ . "./public/assets/footer.php";
+
+    if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST["add_employee"])){
+        
+
+    }
 } else {
     echo "<br>";
     echo "404 - Page Not Found";
