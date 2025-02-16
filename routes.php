@@ -10,12 +10,13 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
 } elseif ($uri === "/alpha_HRM/public/employees") {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_employee'])){
-        echo "This form has been received";
-        //var_dump($_POST);
+        var_dump($_POST);
+        echo("<br>");
         require_once "app/models/Employee.php";
         $employee = new Employee();
         $employee->attachProps();
-        $employee->addEmployee();
+        $addEmployee_status = $employee->addEmployee();
+        var_dump($addEmployee_status);
     }
 
     require_once "app/controllers/DashboardController.php";

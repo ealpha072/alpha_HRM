@@ -50,12 +50,26 @@ class Validator {
         if (!preg_match("/^[a-zA-Z0-9]+$/", $id)){
             array_push($this->errors_array, "Employee ID must be alphanumeric");
         }
+        return $this->errors_array;
     }
 
-    public function validateTypeLevelDepartment($type, $level, $dpt){
+    public function validateTypeLevelDpt($type, $level, $dpt){
         if (empty($type) || empty($level) || empty($dpt) ){
             array_push($this->errors_array, "Employe level, employe ID and employee department cannot be blank");
         }
+        return $this->errors_array;
+    }
+
+    public function validateGender($gender){
+        $allowed_genders = ['male', 'female'];
+        if (empty($gender)){
+            array_push($this->errors_array, "Employee gender cannot be blank");
+        }
+
+        if(!in_array($gender, $allowed_genders)){
+            array_push($this->errors_array, "Gender can only be male or female");
+        }
+        return $this->errors_array;
     }
 }
 
