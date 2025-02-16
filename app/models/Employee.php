@@ -42,14 +42,26 @@ class Employee{
         $employee_errors = [];
         //validation
         $new_validator = new Validator();
-        $name_errors = $new_validator->validateNames($this->first_name, $this->last_name);
-        $email_errors = $new_validator->validateEmail($this->personal_email);
-        $gender_errors = $new_validator->validateGender($this->gender);
-        $phone_errors = $new_validator->validatePhoneNumber($this->phone_number);
-        $employee_id_errors = $new_validator->validateEmployeeID($this->employee_id);
-        $employee_type_level_dpt = $new_validator->validateTypeLevelDpt($this->employee_type, $this->employee_level, $this->department);
+        $name_errors = $new_validator->validateNames($this->first_name, $this->last_name, []);
+        $email_errors = $new_validator->validateEmail($this->personal_email, []);
+        $gender_errors = $new_validator->validateGender($this->gender, []);
+        $phone_errors = $new_validator->validatePhoneNumber($this->phone_number, []);
+        $employee_id_errors = $new_validator->validateEmployeeID($this->employee_id, []);
+        $employee_type_level_dpt = $new_validator->validateTypeLevelDpt($this->employee_type, $this->employee_level, $this->department, []);
         //$date_of_joining_errors = $new_validator->validateDateOfJoining($this->date_of_joining);
         
+        // var_dump($name_errors);
+        // echo "<br>";
+        var_dump($email_errors);
+        echo "<br>";
+        // var_dump($gender_errors);
+        // echo "<br>";
+        // var_dump($phone_errors);
+        // echo "<br>";
+        // var_dump($employee_id_errors);
+        // echo "<br>";
+        // var_dump($employee_type_level_dpt);
+        // echo "<br>";
         $employee_errors = array_merge(
             $name_errors, 
             $email_errors, 
@@ -59,6 +71,7 @@ class Employee{
             $employee_type_level_dpt
         );
         //$photo_errors = $new_validator->validatePhoto($this->photo);
+        var_dump($employee_errors);
 
         if (count($employee_errors) === 0){
             $stmt = "INSERT INTO employees (
@@ -89,9 +102,13 @@ class Employee{
             ];
     
             $this->db->insert($stmt, $params);
-            return ["New employee added successfully to database", 'Success'];
+            unset($_SESSION['msg-success']);
+            $_SESSION['msg-success'] = "New employee: " . $this->first_name ." ". $this->last_name. "added successfully to database!!";
+            return $_SESSION['msg-success'];
         } else{
-            return [$employee_errors, "Errors"];
+            unset($_SESSION['msg-errors']);
+            $_SESSION['msg-errors'] = $employee_errors;
+            return $_SESSION['msg-errors'];
         }
     }
 

@@ -12,6 +12,26 @@
                 <!--personal card info-->
                 <div class="form-div personal_info">
 
+                    <?php
+                        if (isset($_SESSION['msg-success'])){
+                            echo 
+                            "<div class='alert alert-success' role='alert'>";
+                                echo $_SESSION['msg-success'];
+                            echo "</div>";
+                        }
+
+                        if (isset($_SESSION['msg-errors'])){
+                            echo 
+                            "<div class='alert alert-danger' role='alert'>
+                            <ul>";
+                            foreach ($_SESSION['msg-errors'] as $error) {
+                                echo "<li>" . htmlspecialchars($error) . "</li>";
+                            }
+                            echo "</ul></div>";
+                            unset($_SESSION['msg-errors']);
+                        }
+                    ?>
+
                     <h6>Personal Info</h6>
 
                     <div class="form-group row">
