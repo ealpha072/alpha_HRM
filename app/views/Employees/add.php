@@ -46,13 +46,14 @@
                     <div class="form-group row">
                         <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Phone Number <sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="tel" placeholder="Phone Number" class="form-control form-control-sm" name="phone-number" required maxlength="13">
+                            <input type="tel" placeholder="Phone Number" class="form-control form-control-sm" name="phone_number" required maxlength="13">
                             <small id="emailHelp" class="form-text text-muted">Phone number must be 13 digits (+2547XXXXXXXX)</small>
                         </div>
 
                         <label for="photo" class="col-sm-2 col-form-label col-form-label-sm">Photo</label>
                         <div class="col-sm-4">
-                            <input type="file" class="form-control form-control-sm" name="photo">
+                            <input type="file" class="form-control form-control-sm" name="photo" value="profile.jpg">
+                            <input type="hidden" name="photo_dummy" value="profile.jpg">
                         </div>
                     </div>
 
@@ -60,7 +61,7 @@
                 <!-- END OF CARD-->
 
                 <!--conatct info card-->
-                <!-- <div class="form-div work_info">
+                <div class="form-div work_info">
 
                     <h6>Work Information</h6>
                     <div class="form-group row">
@@ -90,7 +91,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Date of Joining</label>
+                        <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Date of Joining <sup>*</sup> </label>
                         <div class="col-sm-4">
                             <input type="date" class="form-control form-control-sm" name="date_of_joining">
                         </div>
@@ -100,7 +101,7 @@
                             <input type="text" class="form-control form-control-sm" name="department" required>
                         </div>
 
-                    </div>-->
+                    </div>
                     <hr>
                     <div class="submit">
                         <button class="btn btn-primary" name="add_employee" type="submit" id="add_employee"><i class="fa fa-plus-circle fa-sm"></i> Add Employee</button>

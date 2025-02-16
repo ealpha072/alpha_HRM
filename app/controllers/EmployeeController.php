@@ -6,7 +6,7 @@ class EmployeeController extends Controller{
         $this->view("employees/add");
     }
 
-    public function store(){
+    /*public function store(){
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["add_employee"])) {
             $first_name = $_POST["first_name"];
             $last_name = $_POST["last_name"];
@@ -20,7 +20,7 @@ class EmployeeController extends Controller{
             $date_of_joining = $_POST["date_of_joining"];
             $department = $_POST["department"];
         }
-    }
+    }*/
 }
 
 

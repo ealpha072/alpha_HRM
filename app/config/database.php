@@ -25,13 +25,54 @@ class Database {
         if(!self::$instance){
             self::$instance= new Database();
         }
-        return self::$instance->pdo;
+        return self::$instance;
     }
 
-    public function query($sql, $params = []){
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute($params);
-        return $stmt;
+    public function executeStmt($sql = "", $params = []){
+        try{
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($params);
+            return $stmt;
+        } catch (Exception $e){
+            throw new Exception($e->getMessage());
+            echo "SQL query not executing";
+        }
     }
+
+    public function insert($statement = "", $params = []){
+        try {
+            $this->executeStmt($statement, $params);
+            echo "Record inserted successfully";
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    public function select($statement = "", $params = []){
+        try {
+            $results = $this->executeStmt($statement, $params);
+            return $results->fetchAll();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    public function update($statement = "", $params=[]){
+        try {
+            $this->executeStmt($statement, $params);
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    public function remove($statement = "", $params=[]){
+        try {
+            $this->executeStmt($statement, $params);
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+
 }
 ?>

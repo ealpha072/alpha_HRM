@@ -17,6 +17,11 @@ form input{
     box-shadow: none !important;
 }
 
+sup{
+    color: #dc3545;
+    font-weight: bold;
+}
+
 /*
     DEMO STYLE
 */
