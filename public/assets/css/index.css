@@ -40,7 +40,7 @@ a:focus {
 }
 
 .navbar {
-    padding: 10px 5px;
+    padding: 15px 10px;
     background: #fff;
     border: none;
     border-radius: 0;
@@ -80,7 +80,7 @@ a:focus {
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -200px;
 }
 
 #sidebar .sidebar-header {

@@ -81,7 +81,7 @@
                 <!-- END OF CARD-->
 
                 <!--conatct info card-->
-                <div class="form-div work_info">
+                <div class="work_info">
 
                     <h6>Work Information</h6>
                     <div class="form-group row">

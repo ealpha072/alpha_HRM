@@ -48,20 +48,7 @@ class Employee{
         $phone_errors = $new_validator->validatePhoneNumber($this->phone_number, []);
         $employee_id_errors = $new_validator->validateEmployeeID($this->employee_id, []);
         $employee_type_level_dpt = $new_validator->validateTypeLevelDpt($this->employee_type, $this->employee_level, $this->department, []);
-        //$date_of_joining_errors = $new_validator->validateDateOfJoining($this->date_of_joining);
         
-        // var_dump($name_errors);
-        // echo "<br>";
-        var_dump($email_errors);
-        echo "<br>";
-        // var_dump($gender_errors);
-        // echo "<br>";
-        // var_dump($phone_errors);
-        // echo "<br>";
-        // var_dump($employee_id_errors);
-        // echo "<br>";
-        // var_dump($employee_type_level_dpt);
-        // echo "<br>";
         $employee_errors = array_merge(
             $name_errors, 
             $email_errors, 
@@ -70,8 +57,6 @@ class Employee{
             $employee_id_errors, 
             $employee_type_level_dpt
         );
-        //$photo_errors = $new_validator->validatePhoto($this->photo);
-        var_dump($employee_errors);
 
         if (count($employee_errors) === 0){
             $stmt = "INSERT INTO employees (
