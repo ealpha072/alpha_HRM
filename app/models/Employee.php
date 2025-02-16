@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "../../config/database.php";
+require_once __DIR__ . "../../helpers/Validator.php";
 
 
 class Employee{
@@ -37,6 +38,9 @@ class Employee{
     }
  
     public function addEmployee(){
+
+        //validation
+
         $stmt = "INSERT INTO employees (
             first_name, 
             last_name, 
