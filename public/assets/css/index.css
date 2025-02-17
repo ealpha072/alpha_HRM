@@ -1,6 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 :root {
-    --primary-color: #2C3E50;
+    --primary-color: rgb(31, 58, 147, 1);
     --secondary-color: #6c757d;
     --background-color: #f8f9fa;
     --text-dark: #212529;
@@ -8,7 +8,6 @@
     --warning-color: #ffc107;
     --danger-color: #dc3545;
 }
-
 
 /* 
     GENERAL STYLES
@@ -100,7 +99,7 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: #506fe4;
     background: #fff;
 }
 
@@ -127,8 +126,6 @@ ul ul a {
     padding-left: 30px !important;
     background: #34495E;
 }
-
-
 
 /* ---------------------------------------------------
     CONTENT STYLE

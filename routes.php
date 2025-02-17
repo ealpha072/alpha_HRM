@@ -1,7 +1,6 @@
 <?php
 $uri = $_SERVER['REQUEST_URI'];
 
-
 if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
     require_once "app/controllers/DashboardController.php";
     $controller = new DashboardController();
