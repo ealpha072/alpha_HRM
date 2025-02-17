@@ -18,6 +18,7 @@
                             "<div class='alert alert-success' role='alert'>";
                                 echo $_SESSION['msg-success'];
                             echo "</div>";
+                            unset($_SESSION['msg-success']);
                         }
 
                         if (isset($_SESSION['msg-errors'])){
