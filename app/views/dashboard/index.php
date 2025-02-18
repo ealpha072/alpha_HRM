@@ -26,13 +26,13 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
                 </li>
 
                 <li>
-                    <a href="#leaveSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Leave Tracker</a>
+                    <a href="#leaveSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fa fa-calendar mr-2"></i> Leave Tracker</a>
                     <ul class="collapse list-unstyled" id="leaveSubmenu">
                         <li>
-                            <a href="#">Add Leave</a>
+                            <a href="leave"><i class="fa fa-calendar" aria-hidden="true"></i> Add Leave</a>
                         </li>
                         <li>
-                            <a href="#">Employee Leave</a>
+                            <a href="#"> <i class="fa fa-calendar" aria-hidden="true"></i> Employee Leave</a>
                         </li>
                         
                     </ul>

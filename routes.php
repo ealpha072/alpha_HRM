@@ -25,6 +25,14 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
     $dbcontroller->index();
     $employeecontroller->add();
     require_once __DIR__ . "./public/assets/footer.php";
+} elseif ($uri === "/alpha_HRM/public/leave"){
+    require_once "app/controllers/DashboardController.php";
+    require_once "app/controllers/LeaveController.php";
+    $dbcontroller = new DashboardController();
+    $leavecontroller = new LeaveController();
+    $dbcontroller->index();
+    $leavecontroller->add();
+    require_once __DIR__ . "./public/assets/footer.php";
 } else {
     echo $_SERVER['REQUEST_URI'];
     echo "<br>";
