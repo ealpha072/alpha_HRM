@@ -88,7 +88,7 @@ class Employee{
     
             $this->db->insert($stmt, $params);
             unset($_SESSION['msg-success']);
-            $_SESSION['msg-success'] = "New employee: " . $this->first_name ." ". $this->last_name. "added successfully to database!!";
+            $_SESSION['msg-success'] = "New employee: " . ucfirst($this->first_name) ." ". ucfirst($this->last_name). " added successfully to database!!";
             return $_SESSION['msg-success'];
         } else{
             unset($_SESSION['msg-errors']);

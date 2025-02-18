@@ -18,8 +18,6 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
         //var_dump($addEmployee_status);
     }
 
-    unset($_SESSION['msg-success']);
-
     require_once "app/controllers/DashboardController.php";
     require_once "app/controllers/EmployeeController.php";
     $dbcontroller = new DashboardController();

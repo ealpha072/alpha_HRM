@@ -42,7 +42,6 @@ class Database {
     public function insert($statement = "", $params = []){
         try {
             $this->executeStmt($statement, $params);
-            echo "Record inserted successfully";
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }

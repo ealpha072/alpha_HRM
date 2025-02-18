@@ -6,9 +6,6 @@ class EmployeeController extends Controller{
         $this->view("employees/add");
     }
 
-    public function viewEmployee (){
-        
-    }
 }
 
 
