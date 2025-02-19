@@ -2,7 +2,6 @@
 A human resources management system by Alpha Systems
 
 ## Folder structure
-
 ### 1️⃣ `app/` – Main Application Logic
 - `controllers/` → Handles requests & business logic (e.g., EmployeeController.php)
 - `models/` → Defines database interactions (e.g., Employee.php)
