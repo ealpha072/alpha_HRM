@@ -37,6 +37,20 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
                         
                     </ul>
                 </li>
+
+                <li>
+                    <a href="#payrollSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fa fa-calendar mr-2"></i> Payroll</a>
+                    <ul class="collapse list-unstyled" id="payrollSubmenu">
+                        <li>
+                            <a href="payroll"><i class="fa fa-calendar" aria-hidden="true"></i> Set Salary</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-calendar" aria-hidden="true"></i> Pay Slip</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Settings</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">

@@ -33,7 +33,17 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
     $dbcontroller->index();
     $leavecontroller->add();
     require_once __DIR__ . "./public/assets/footer.php";
-} else {
+} elseif($uri === "/alpha_HRM/public/payroll")
+{
+    require_once "app/controllers/DashboardController.php";
+    require_once "app/controllers/PayrollController.php";
+    $dbcontroller = new DashboardController();
+    $payrollcontroller = new PayrollController();
+    $dbcontroller->index();
+    $payrollcontroller->add();
+    require_once __DIR__ . "./public/assets/footer.php";
+}
+else {
     echo $_SERVER['REQUEST_URI'];
     echo "<br>";
     echo "404 - Page Not Found";
