@@ -7,7 +7,4 @@ class EmployeeController extends Controller{
     }
 
 }
-
-
-
 ?>
