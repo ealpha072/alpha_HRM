@@ -15,7 +15,21 @@
                         <div class="col-sm-4">
                             <input type="text" class="form-control form-control-sm" name="first_name" required>
                         </div>
-                    </div> 
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Login Username<sup>*</sup></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control form-control-sm" name="first_name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Login Password<sup>*</sup></label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control form-control-sm" name="first_name" required>
+                        </div>
+                    </div>
 
                     <div class="form-group row">
                         <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Address<sup>*</sup></label>
@@ -39,7 +53,11 @@
                     <hr>
                     <div class="submit">
                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
-                            Edit
+                            Edit Org Info
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#loginModal">
+                            Edit Login Info
                         </button>
                     </div>
 
@@ -98,9 +116,59 @@
                         </div>
                     </div>
 
+                    <!--modal-->
+                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title" id="exampleModalLabel">Login settings</h6>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">New Username</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control form-control-sm" value="" required name="new-username">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">Old Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control form-control-sm" value="" required name="old-password">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">New Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control form-control-sm" value="" required name="new-password">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">Confirm Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control form-control-sm" value="" required name="confirm-password">
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-success btn-sm" name="update-logins">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of modal-->
+
                 </div>
             </form>
             <!--END OF FORM-->
         </div>
     </div>
+
 </div>
