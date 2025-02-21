@@ -11,38 +11,91 @@
                 <!--personal card info-->
                 <div class="form-div personal_info">
                     <div class="form-group row">
-                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Employee Name<sup>*</sup></label>
+                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Name<sup>*</sup></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control form-control-sm" name="first_name" required>
+                        </div>
+                    </div> 
+
+                    <div class="form-group row">
+                        <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Address<sup>*</sup></label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control form-control-sm" name="first_name" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Leave Type<sup>*</sup></label>
+                        <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Email <sup>*</sup></label>
                         <div class="col-sm-4">
-                            <select name="gender" id="" class="form-control form-control-sm" required>
-                                <option value="" disabled >--Type--</option>
-                                <option value="male" selected>Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Start Date <sup>*</sup></label>
-                        <div class="col-sm-4">
-                            <input type="date" placeholder="Phone Number" class="form-control form-control-sm" name="phone_number">
+                            <input type="email" placeholder="Email" class="form-control form-control-sm" name="phone_number">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">End Date <sup>*</sup></label>
+                        <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Telephone <sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="date" placeholder="Phone Number" class="form-control form-control-sm" name="phone_number">
+                            <input type="tel" placeholder="Phone Number" class="form-control form-control-sm" name="phone_number">
                         </div>
                     </div>
                     <hr>
                     <div class="submit">
-                        <button class="btn btn-primary" name="add_employee" type="submit" id="add_employee"><i class="fa fa-plus-circle fa-sm"></i> Book Leave</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+                            Edit
+                        </button>
+                    </div>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title" id="exampleModalLabel">Organization Settings</h6>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="" method="post">
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">Name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control form-control-sm" value="" required name="Hospital-name">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">Address</label>
+                                            <div class="col-sm-9">
+                                                <input type="email" class="form-control form-control-sm" value="" required name="Hospital-email">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">Phone</label>
+                                            <div class="col-sm-9">
+                                                <input type="tel" class="form-control form-control-sm" value="" required name="Hospital-phone">
+                                                <small id="emailHelp" class="form-text text-muted">Phone number must be 13 digits (+2547XXXXXXXX)</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">Vision</label>
+                                            <div class="col-sm-9">
+                                                <textarea cols="" rows="" class="form-control form-control-sm" required name="Hospital-vision"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">Mission</label>
+                                            <div class="col-sm-9">
+                                                <textarea cols="" rows="" class="form-control form-control-sm" required name="Hospital-mission"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-success btn-sm" name="edit-Hospital-settings">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
 
                 </div>
