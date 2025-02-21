@@ -10,10 +10,6 @@ class SettingsController extends Controller{
         $this->view("settings/department");
     }
 
-    public function designation(){
-        $this->view("settings/designation");
-    }
-
     public function leavetypes(){
         $this->view("settings/leavetype");
     }

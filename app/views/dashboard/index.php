@@ -61,9 +61,6 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
                             <a href="settings?settings_page=department">Department</a>
                         </li>
                         <li>
-                            <a href="settings?settings_page=designation">Designation</a>
-                        </li>
-                        <li>
                             <a href="settings?settings_page=leave_type">Leave Types</a>
                         </li>
                     </ul>

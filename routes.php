@@ -52,13 +52,21 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
         $dbcontroller->index();
         $settingscontroller->organization();
         require_once __DIR__ . "./public/assets/footer.php";
-    }elseif(isset($_GET['settings_page']) && $_GET['settings_page'] === "department"){
+    } elseif ( isset($_GET['settings_page']) && $_GET['settings_page'] === "department" ){
         require_once "app/controllers/DashboardController.php";
         require_once "app/controllers/SettingsController.php";
         $dbcontroller = new DashboardController();
         $settingscontroller = new SettingsController();
         $dbcontroller->index();
         $settingscontroller->department();
+        require_once __DIR__ . "./public/assets/footer.php";
+    }elseif (isset($_GET['settings_page']) && $_GET['settings_page'] === "leave_type" ) {
+        require_once "app/controllers/DashboardController.php";
+        require_once "app/controllers/SettingsController.php";
+        $dbcontroller = new DashboardController();
+        $settingscontroller = new SettingsController();
+        $dbcontroller->index();
+        $settingscontroller->leavetypes();
         require_once __DIR__ . "./public/assets/footer.php";
     }
 }
