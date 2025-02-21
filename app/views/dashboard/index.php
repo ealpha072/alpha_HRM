@@ -55,16 +55,16 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Settings</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Organization Details</a>
+                            <a href="settings?settings_page=organization">Organization Details</a>
                         </li>
                         <li>
-                            <a href="#">Department</a>
+                            <a href="settings?settings_page=department">Department</a>
                         </li>
                         <li>
-                            <a href="#">Designation</a>
+                            <a href="settings?settings_page=designation">Designation</a>
                         </li>
                         <li>
-                            <a href="#">Leave Types</a>
+                            <a href="settings?settings_page=leave_type">Leave Types</a>
                         </li>
                     </ul>
                 </li>

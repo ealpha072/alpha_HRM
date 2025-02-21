@@ -42,6 +42,17 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
     $dbcontroller->index();
     $payrollcontroller->add();
     require_once __DIR__ . "./public/assets/footer.php";
+} elseif(str_contains($uri, "/alpha_HRM/public/settings"))
+{
+    if (isset($_GET['settings_page']) && $_GET['settings_page'] === "organization"){
+        require_once "app/controllers/DashboardController.php";
+        require_once "app/controllers/SettingsController.php";
+        $dbcontroller = new DashboardController();
+        $settingscontroller = new SettingsController();
+        $dbcontroller->index();
+        $settingscontroller->organization();
+        require_once __DIR__ . "./public/assets/footer.php";
+    }
 }
 else {
     echo $_SERVER['REQUEST_URI'];

@@ -28,7 +28,7 @@
                     </div>
                     <hr>
                     <div class="submit">
-                        <button class="btn btn-primary" name="add_employee" type="submit" id="add_employee"><i class="fa fa-plus-circle fa-sm"></i> Book Leave</button>
+                        <button class="btn btn-primary" name="add_employee" type="submit" id="add_employee"><i class="fa fa-plus-circle fa-sm"></i> Set Slary</button>
                     </div>
 
                 </div>
