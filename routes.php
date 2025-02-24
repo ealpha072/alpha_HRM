@@ -26,6 +26,16 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
     $employeecontroller->add();
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/leave"){
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_leave'])){
+        // var_dump($_POST);
+        // echo("<br>");
+        require_once "app/models/Leave.php";
+        $leave = new Leave();
+        $employee->attachProps();
+        $addEmployee_status = $employee->bookEmployeeLeave();
+        //var_dump($addEmployee_status);
+    }
+    
     require_once "app/controllers/DashboardController.php";
     require_once "app/controllers/LeaveController.php";
     $dbcontroller = new DashboardController();

@@ -3,10 +3,10 @@ require_once __DIR__ . "../../config/database.php";
 require_once __DIR__ . "../../helpers/Validator.php";
 
 
-class Employee{
+class Leave{
     private $db;
 
-    public $employeeName = "";
+    public $employeeId = "";
     public $leaveType = "";
     public $startDate = "";
     public $stopDate = "";
@@ -17,7 +17,7 @@ class Employee{
     }
 
     public function attachProps (){
-        $this->employeeName = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['employee_name']))));
+        $this->employeeId = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['employee_id']))));
         $this->leaveType = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['leave_type']))));
         $this->startDate = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['start_date']))));
         $this->stopDate = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['stop_date']))));
@@ -29,7 +29,7 @@ class Employee{
 
         if (count($employee_errors) === 0){
             $stmt = "INSERT INTO leaves (
-                employee_name,
+                employee_id,
                 leave_type,
                 start_date,
                 end_date,
@@ -37,7 +37,7 @@ class Employee{
                 ) VALUES (?, ?, ?, ?, ?)";
     
             $params = [
-                $this->employeeName,
+                $this->employeeId,
                 $this->leaveType,
                 $this->startDate,
                 $this->stopDate
@@ -45,7 +45,7 @@ class Employee{
     
             $this->db->insert($stmt, $params);
             unset($_SESSION['msg-success']);
-            $_SESSION['msg-success'] = "Employee: " . ucfirst($this->employeeName) ." booked for leave: ". ucfirst($this->leaveType). " successfully !!";
+            $_SESSION['msg-success'] = "Employee: " . ucfirst($this->employeeId) ." booked for leave: ". ucfirst($this->leaveType). " successfully !!";
             return $_SESSION['msg-success'];
         } else{
             unset($_SESSION['msg-errors']);

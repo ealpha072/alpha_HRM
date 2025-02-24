@@ -14,16 +14,16 @@
                     <h6>Leave Info</h6>
 
                     <div class="form-group row">
-                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Employee Name<sup>*</sup></label>
+                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Employee ID<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="first_name" required>
+                            <input type="text" class="form-control form-control-sm" name="employee_id" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Leave Type<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <select name="gender" id="" class="form-control form-control-sm" required>
+                            <select name="leave_type" id="" class="form-control form-control-sm" required>
                                 <option value="" disabled >--Type--</option>
                                 <option value="male" selected>Male</option>
                                 <option value="female">Female</option>
@@ -34,18 +34,18 @@
                     <div class="form-group row">
                         <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Start Date <sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="date" placeholder="Phone Number" class="form-control form-control-sm" name="phone_number">
+                            <input type="date" class="form-control form-control-sm" name="start_date">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">End Date <sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="date" placeholder="Phone Number" class="form-control form-control-sm" name="phone_number">
+                            <input type="date" placeholder="Phone Number" class="form-control form-control-sm" name="stop_date">
                         </div>
                     </div>
                     <hr>
                     <div class="submit">
-                        <button class="btn btn-primary" name="add_employee" type="submit" id="add_employee"><i class="fa fa-plus-circle fa-sm"></i> Book Leave</button>
+                        <button class="btn btn-primary" name="book_leave" type="submit" id=""><i class="fa fa-plus-circle fa-sm"></i> Book Leave</button>
                     </div>
 
                 </div>
