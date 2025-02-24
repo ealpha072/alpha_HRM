@@ -67,7 +67,7 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
         $settingscontroller = new SettingsController();
         $dbcontroller->index();
         $settingscontroller->leavetypes();
-        require_once __DIR__ . "./public/assets/footer.php";
+        require_once __DIR__ .  "./public/assets/footer.php";
     }
 }
 else {

@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-header">
             <div class="float-left">
-                <h5 class="header"><i class="fa fa-plus-circle fa-sm"></i> Add new employee</h5>
+                <h5 class="header"><i class="fa fa-plus-circle fa-sm"></i> Add Salary Info</h5>
             </div>
         </div>
         <div class="card-body">

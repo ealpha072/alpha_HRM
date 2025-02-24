@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Max Numebr of days <sup>*</sup></label>
+                        <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Max Number of days</label>
                         <div class="col-sm-4">
                             <input type="number"  class="form-control form-control-sm" name="">
                         </div>
