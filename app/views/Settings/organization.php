@@ -13,41 +13,41 @@
                     <div class="form-group row">
                         <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Name<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="first_name" required>
+                            <input type="text" class="form-control form-control-sm" name="" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Login Username<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="first_name" required>
+                            <input type="text" class="form-control form-control-sm" name="" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Login Password<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="password" class="form-control form-control-sm" name="first_name" required>
+                            <input type="password" class="form-control form-control-sm" name="" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Address<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="first_name" required>
+                            <input type="text" class="form-control form-control-sm" name="" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Email <sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="email" placeholder="Email" class="form-control form-control-sm" name="phone_number">
+                            <input type="email" placeholder="Email" class="form-control form-control-sm" name="">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Telephone <sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="tel" placeholder="Phone Number" class="form-control form-control-sm" name="phone_number">
+                            <input type="tel" placeholder="Phone Number" class="form-control form-control-sm" name="">
                         </div>
                     </div>
                     <hr>
@@ -72,21 +72,21 @@
                                         <div class="form-group row">
                                             <label for="" class="col-sm-3 col-form-label col-form-label-sm">Name</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control form-control-sm" value="" required name="Hospital-name">
+                                                <input type="text" class="form-control form-control-sm" value="" required name="org_name">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">Address</label>
+                                            <label for="" class="col-sm-3 col-form-label col-form-label-sm">Email</label>
                                             <div class="col-sm-9">
-                                                <input type="email" class="form-control form-control-sm" value="" required name="Hospital-email">
+                                                <input type="email" class="form-control form-control-sm" value="" required name="org_email">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="" class="col-sm-3 col-form-label col-form-label-sm">Phone</label>
                                             <div class="col-sm-9">
-                                                <input type="tel" class="form-control form-control-sm" value="" required name="Hospital-phone">
+                                                <input type="tel" class="form-control form-control-sm" value="" required name="org_phone">
                                                 <small id="emailHelp" class="form-text text-muted">Phone number must be 13 digits (+2547XXXXXXXX)</small>
                                             </div>
                                         </div>
@@ -94,20 +94,20 @@
                                         <div class="form-group row">
                                             <label for="" class="col-sm-3 col-form-label col-form-label-sm">Vision</label>
                                             <div class="col-sm-9">
-                                                <textarea cols="" rows="" class="form-control form-control-sm" required name="Hospital-vision"></textarea>
+                                                <textarea cols="" rows="" class="form-control form-control-sm" required name="org_vision"></textarea>
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="" class="col-sm-3 col-form-label col-form-label-sm">Mission</label>
                                             <div class="col-sm-9">
-                                                <textarea cols="" rows="" class="form-control form-control-sm" required name="Hospital-mission"></textarea>
+                                                <textarea cols="" rows="" class="form-control form-control-sm" required name="org_mission"></textarea>
                                             </div>
                                         </div>
 
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-success btn-sm" name="edit-Hospital-settings">Save</button>
+                                            <button type="submit" class="btn btn-success btn-sm" name="edit-Hospital-settings" name="edit_org_details">Save</button>
                                         </div>
                                     </form>
                                 </div>

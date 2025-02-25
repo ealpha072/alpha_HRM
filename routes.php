@@ -44,9 +44,8 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
     $leavecontroller->add();
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif($uri === "/alpha_HRM/public/payroll")
-{   
-    
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['set_base_salary'])){
+{
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['set_base_salary'])){
         // var_dump($_POST);
         // echo("<br>");
         require_once "app/models/Payroll.php";
