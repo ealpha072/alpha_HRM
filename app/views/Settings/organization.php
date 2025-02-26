@@ -61,6 +61,8 @@
                         </button>
                     </div>
 
+                    <!--MODAL FOR EDITING ORGANIZATION DETAILS-->
+
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -116,7 +118,9 @@
                         </div>
                     </div>
 
-                    <!--modal-->
+                    <!-- END OF MODAL-->
+
+                    <!--MODAL FOR EDITING ORGANIZATION LOGIN DETAILS-->
                     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -129,21 +133,21 @@
                                         <div class="form-group row">
                                             <label for="" class="col-sm-3 col-form-label col-form-label-sm">New Username</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control form-control-sm" value="" required name="new-username">
+                                                <input type="text" class="form-control form-control-sm" value="" required name="new_username">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="" class="col-sm-3 col-form-label col-form-label-sm">Old Password</label>
                                             <div class="col-sm-9">
-                                                <input type="password" class="form-control form-control-sm" value="" required name="old-password">
+                                                <input type="password" class="form-control form-control-sm" value="" required name="old_password">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="" class="col-sm-3 col-form-label col-form-label-sm">New Password</label>
                                             <div class="col-sm-9">
-                                                <input type="password" class="form-control form-control-sm" value="" required name="new-password">
+                                                <input type="password" class="form-control form-control-sm" value="" required name="new_password">
                                             </div>
                                         </div>
 
@@ -156,14 +160,14 @@
 
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-success btn-sm" name="update-logins">Save</button>
+                                            <button type="submit" class="btn btn-success btn-sm" name="update_logins">Save</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--end of modal-->
+                    <!-- END OF MODAL-->
 
                 </div>
             </form>

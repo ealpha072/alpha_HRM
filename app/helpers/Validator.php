@@ -73,6 +73,37 @@ class Validator {
         }
         return $errors_array;
     }
+
+    public function validatePassword ($password, $errors_array=[]){
+
+        if (empty($password)){
+            array_push($errors_array, "Password empty, please provide to continue");
+        }
+
+        // Minimum length requirement
+        $min_length = 8;
+
+        // Check for uppercase letters
+        $has_upper = preg_match('/[A-Z]/', $password);
+
+        // Check for lowercase letters
+        $has_lower = preg_match('/[a-z]/', $password);
+
+        // Check for numbers
+        $has_number = preg_match('/\d/', $password);
+
+        // Check for special characters (non-alphanumeric)
+        $has_special = preg_match('/[^A-Za-z0-9]/', $password);
+
+        // Check overall strength based on criteria
+        $is_valid = strlen($password) >= $min_length &&
+                    $has_upper &&
+                    $has_lower &&
+                    $has_number &&
+                    $has_special;
+        
+        return $is_valid;
+    }
 }
 
 ?>
