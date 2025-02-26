@@ -81,28 +81,31 @@ class Validator {
         }
 
         // Minimum length requirement
-        $min_length = 8;
+        if(!strlen($password) < 8){
+            array_push($errors_array, "Password must be at least 8 characters long");
+        }
 
         // Check for uppercase letters
-        $has_upper = preg_match('/[A-Z]/', $password);
+        if (!preg_match('/[A-Z]/', $password)){
+            array_push($errors_array, "Password must contain at least one uppercase character");
+        }
 
-        // Check for lowercase letters
-        $has_lower = preg_match('/[a-z]/', $password);
+        // Check for lowercase characters
+        if(!preg_match('/[a-z]/', $password)){
+            array_push($errors_array, "Password must contain at least one lowercase character");
+        }
 
         // Check for numbers
-        $has_number = preg_match('/\d/', $password);
+        if(!preg_match('/\d/', $password)){
+            array_push($errors_array, "Password must contain at least one numerical character]");
+        }
 
         // Check for special characters (non-alphanumeric)
-        $has_special = preg_match('/[^A-Za-z0-9]/', $password);
+        if(!preg_match('/[^A-Za-z0-9]/', $password)){
+            array_push($errors_array, "Password must contain at least one special character]");
+        }
 
-        // Check overall strength based on criteria
-        $is_valid = strlen($password) >= $min_length &&
-                    $has_upper &&
-                    $has_lower &&
-                    $has_number &&
-                    $has_special;
-        
-        return $is_valid;
+        return $errors_array;
     }
 }
 

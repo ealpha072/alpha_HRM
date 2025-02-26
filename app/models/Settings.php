@@ -33,9 +33,9 @@ class Settings{
     }
 
     public function attach_edit_login_details_var(){
-        $this->orgName = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['new_username']))));
-        $this->orgEmail = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['old_password']))));
-        $this->orgPhone = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['new_password']))));
+        $this->username = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['new_username']))));
+        $this->oldPassword = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['old_password']))));
+        $this->newPassword = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['new_password']))));
     }
  
     public function edit_org_details(){
@@ -52,7 +52,7 @@ class Settings{
         );
 
         if (count($org_errors) === 0){
-            $stmt = "INSERT INTO salaries (
+            $stmt = "INSERT INTO user_settings (
                 org_name,
                 org_address,
                 org_phone,
@@ -83,38 +83,30 @@ class Settings{
         $editLoginErrors = [];
 
         $new_validator = new Validator();
-        $email_errors = $new_validator->validateEmail($this->orgEmail, []);
-        $phone_errors = $new_validator->validatePhoneNumber($this->orgPhone, []);
+        $password_errors = $new_validator->validatePassword($this->newPassword);
 
-        $employee_errors = array_merge(
-            $email_errors, 
-            $phone_errors, 
+        $editLoginErrors = array_merge(
+            $password_errors
         );
 
-        if (count($employee_errors) === 0){
-            $stmt = "INSERT INTO salaries (
-                org_name,
-                org_address,
-                org_phone,
-                org_vision,
-                org_mission
-                ) VALUES (?, ?, ?, ?, ?, ?)";
+        if (count($editLoginErrors) === 0){
+            $stmt = "INSERT INTO user_settings (
+                org_username,
+                org_password,
+                ) VALUES (?, ?)";
     
             $params = [
-                $this->orgName,
-                $this->orgEmail,
-                $this->orgPhone,
-                $this->orgVision,
-                $this->orgMission
+                $this->username,
+                password_hash($this->newPassword, PASSWORD_BCRYPT)
             ];
     
             $this->db->insert($stmt, $params);
             unset($_SESSION['msg-success']);
-            $_SESSION['msg-success'] = "Organization: " . ucfirst($this->orgName) ." details updated successfully";
+            $_SESSION['msg-success'] = "Login details updated successfully";
             return $_SESSION['msg-success'];
         } else {
             unset($_SESSION['msg-errors']);
-            $_SESSION['msg-errors'] = $employee_errors;
+            $_SESSION['msg-errors'] = $editLoginErrors;
             return $_SESSION['msg-errors'];
         }
     }
