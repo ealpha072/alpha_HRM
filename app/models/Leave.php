@@ -10,6 +10,7 @@ class Leave{
     public $leaveType = "";
     public $startDate = "";
     public $stopDate = "";
+    public $numOfLeaveDays = "";
 
     public function __construct()
     {
@@ -21,6 +22,11 @@ class Leave{
         $this->leaveType = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['leave_type']))));
         $this->startDate = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['start_date']))));
         $this->stopDate = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['stop_date']))));
+    }
+
+    public function attach_add_new_leave_props(){
+        $this->leaveType = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['leave_type']))));
+        $this->numOfLeaveDays = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['leave_days']))));
     }
  
     public function bookEmployeeLeave(){
@@ -52,6 +58,10 @@ class Leave{
             $_SESSION['msg-errors'] = $employee_errors;
             return $_SESSION['msg-errors'];
         }
+    }
+
+    public function addLeave(){
+
     }
 
 }

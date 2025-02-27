@@ -16,14 +16,14 @@
                     <div class="form-group row">
                         <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Leave Type<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="" required>
+                            <input type="text" class="form-control form-control-sm" name="leave_type" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Max Number of days</label>
                         <div class="col-sm-4">
-                            <input type="number"  class="form-control form-control-sm" name="">
+                            <input type="number"  class="form-control form-control-sm" name="leave_days">
                         </div>
                     </div>
                     <hr>

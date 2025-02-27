@@ -16,9 +16,7 @@ class Settings{
     public $username = "";
     public $oldPassword = "";
     public $newPassword = "";
-
-
-
+    
     public function __construct()
     {
         $this->db = Database::getInstance();
