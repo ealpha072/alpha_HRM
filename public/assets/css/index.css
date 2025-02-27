@@ -1,4 +1,5 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+/*@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";*/
+
 :root {
     --primary-color: rgb(31, 58, 147, 1);
     --secondary-color: #6c757d;
@@ -19,6 +20,7 @@ small{
 
 form input, form textarea {
     box-shadow: none !important;
+    font-size: 12px !important;
 }
 
 sup{
