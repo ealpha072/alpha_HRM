@@ -19,3 +19,9 @@ CREATE TABLE "leave_types" (
 	"number_of_days"	INTEGER,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
+
+CREATE TABLE "departments" (
+	"id"	INTEGER,
+	"department_name"	TEXT UNIQUE,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);

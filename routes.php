@@ -9,13 +9,10 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
 } elseif ($uri === "/alpha_HRM/public/employees") {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_employee'])) {
-        // var_dump($_POST);
-        // echo("<br>");
         require_once "app/models/Employee.php";
         $employee = new Employee();
         $employee->attachProps();
         $addEmployee_status = $employee->addEmployee();
-        //var_dump($addEmployee_status);
     }
 
     require_once "app/controllers/DashboardController.php";
@@ -26,14 +23,12 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
     $employeecontroller->add();
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/leave") {
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_leave'])) {
-        // var_dump($_POST);
-        // echo("<br>");
         require_once "app/models/Leave.php";
         $leave = new Leave();
         $employee->attachProps();
         $addEmployee_status = $employee->bookEmployeeLeave();
-        //var_dump($addEmployee_status);
     }
 
     require_once "app/controllers/DashboardController.php";
@@ -43,7 +38,9 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
     $dbcontroller->index();
     $leavecontroller->add();
     require_once __DIR__ . "./public/assets/footer.php";
+
 } elseif ($uri === "/alpha_HRM/public/payroll") {
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['set_base_salary'])) {
         // var_dump($_POST);
         // echo("<br>");
@@ -71,6 +68,13 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
         $settingscontroller->organization();
         require_once __DIR__ . "./public/assets/footer.php";
     } elseif (isset($_GET['settings_page']) && $_GET['settings_page'] === "department") {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_department'])) {
+            require_once "app/models/Department.php";
+            $dpt = new Department;
+            $dpt->attachProps();
+            $addDpt_status = $dpt->add_department();
+        }
+
         require_once "app/controllers/DashboardController.php";
         require_once "app/controllers/SettingsController.php";
         $dbcontroller = new DashboardController();
@@ -80,8 +84,6 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
         require_once __DIR__ . "./public/assets/footer.php";
     } elseif (isset($_GET['settings_page']) && $_GET['settings_page'] === "leave_type") {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_leave_type'])) {
-            // var_dump($_POST);
-            // echo("<br>");
             require_once "app/models/Leave.php";
             $leave = new Leave;
             $leave->attach_add_new_leave_props();

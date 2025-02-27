@@ -28,6 +28,10 @@ sup{
     font-weight: bold;
 }
 
+.alert{
+    font-size: 10px !important;
+}
+
 /*
     DEMO STYLE
 */
