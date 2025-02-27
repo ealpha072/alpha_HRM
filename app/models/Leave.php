@@ -25,7 +25,7 @@ class Leave{
     }
 
     public function attach_add_new_leave_props(){
-        $this->leaveType = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['leave_type']))));
+        $this->leaveType = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['leave_name']))));
         $this->numOfLeaveDays = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['leave_days']))));
     }
  
@@ -61,6 +61,22 @@ class Leave{
     }
 
     public function addLeave(){
+        $errors = [];
+
+        if (count($errors) === 0){
+            $stmt = "INSERT INTO leave_types (leave_name, number_of_days) VALUES (?,?)";
+            $params = [$this->leaveType, $this->numOfLeaveDays];
+
+            $this->db->insert($stmt, $params);
+            unset($_SESSION['msg-success']);
+            $_SESSION['msg-success'] = "Leave type: " . ucfirst($this->leaveType) ." added successfully";
+            return $_SESSION['msg-success'];
+        } else {
+            unset($_SESSION['msg-errors']);
+            $_SESSION['msg-errors'] = $errors;
+            return $_SESSION['msg-errors'];
+        }
+
 
     }
 

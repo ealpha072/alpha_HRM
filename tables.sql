@@ -13,3 +13,8 @@ CREATE TABLE employees (
     department TEXT NOT NULL
 );
 
+CREATE TABLE leave_types (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    leave_name TEXT,
+    number_of_days INTEGER
+);
