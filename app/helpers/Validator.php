@@ -2,6 +2,13 @@
 
 class Validator {
 
+    public function checkEmpty($item_to_check, $errors_array = []){
+        if (empty($item_to_check)){
+            array_push($errors_array, "No empty fields allowed");
+        }
+        return $errors_array;
+    }
+
     public function validateNames($first_name, $last_name, $errors_array = [])
     {
         if (empty($first_name) || empty($last_name)) {

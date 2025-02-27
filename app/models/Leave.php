@@ -63,6 +63,15 @@ class Leave{
     public function addLeave(){
         $errors = [];
 
+        $validator = new Validator();
+        $leaveTypeEmptyError = $validator->checkEmpty($this->leaveType, []);
+        $leaveNumOfDaysEmptyError = $validator->checkEmpty($this->numOfLeaveDays, []);
+
+        $errors = array_merge(
+            $leaveTypeEmptyError,
+            $leaveNumOfDaysEmptyError
+        );
+
         if (count($errors) === 0){
             $stmt = "INSERT INTO leave_types (leave_name, number_of_days) VALUES (?,?)";
             $params = [$this->leaveType, $this->numOfLeaveDays];
