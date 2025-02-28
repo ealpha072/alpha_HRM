@@ -32,8 +32,8 @@ class Settings{
         $this->orgConfirmPassword = $_POST['confirm_password'];
         $this->orgTel = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['telephone']))));
         $this->orgEmail = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['email']))));
-        $this->orgVision = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['org_vision']))));
-        $this->orgMission = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['org_mission']))));
+        $this->orgVision = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['vision']))));
+        $this->orgMission = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['mission']))));
     }
 
     public function attach_edit_login_details_var(){
@@ -58,7 +58,7 @@ class Settings{
         );
 
         if (count($org_errors) === 0){
-            $stmt = "INSERT INTO user_settings (
+            $stmt = "INSERT INTO org_details (
                 name,
                 username,
                 password,

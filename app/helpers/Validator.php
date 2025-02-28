@@ -88,8 +88,8 @@ class Validator {
         }
 
         // Minimum length requirement
-        if(!strlen($password) < 8){
-            array_push($errors_array, "Password must be at least 8 characters long");
+        if(strlen($password) < 6){
+            array_push($errors_array, "Password must be at least 6 characters long");
         }
 
         // Check for uppercase letters

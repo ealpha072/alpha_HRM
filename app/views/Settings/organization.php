@@ -56,7 +56,7 @@
                     <div class="form-group row">
                         <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Tel<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="telephone" required>
+                            <input type="tel" class="form-control form-control-sm" name="telephone" required>
                             <small id="emailHelp" class="form-text text-muted">Phone number must be 13 digits (+2547XXXXXXXX)</small>
                         </div>
                         <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Email <sup>*</sup></label>
