@@ -13,30 +13,30 @@
                     <div class="form-group row">
                         <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Name<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="personal_email">
+                            <input type="text" class="form-control form-control-sm" name="name">
                         </div>
 
                         <label for="gender" class="col-sm-2 col-form-label col-form-label-sm">System Username<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="email" class="form-control form-control-sm" name="personal_email">
+                            <input type="text" class="form-control form-control-sm" name="username">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">System Password<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="username" required>
+                            <input type="password" class="form-control form-control-sm" name="password" required>
                         </div>
                         <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Confirm Password<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="username" required>
+                            <input type="password" class="form-control form-control-sm" name="confirm_password" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Address<sup>*</sup></label>
+                        <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Tel<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="address" required>
+                            <input type="text" class="form-control form-control-sm" name="telephone" required>
                         </div>
                         <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Email <sup>*</sup></label>
                         <div class="col-sm-4">
@@ -47,11 +47,11 @@
                     <div class="form-group row">
                         <label for="" class="col-sm-2 col-form-label col-form-label-sm">Vision</label>
                         <div class="col-sm-4">
-                            <textarea cols="" rows="" class="form-control form-control-sm" required name="org_vision"></textarea>
+                            <textarea cols="" rows="" class="form-control form-control-sm" required name="vision"></textarea>
                         </div>
                         <label for="" class="col-sm-2 col-form-label col-form-label-sm">Mission</label>
                         <div class="col-sm-4">
-                            <textarea cols="" rows="" class="form-control form-control-sm" required name="org_mission"></textarea>
+                            <textarea cols="" rows="" class="form-control form-control-sm" required name="mission"></textarea>
                         </div>
                     </div>
 

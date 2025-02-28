@@ -81,7 +81,7 @@ class Validator {
         return $errors_array;
     }
 
-    public function validatePassword ($password, $errors_array=[]){
+    public function validatePassword ($password, $pass_confirm = null, $errors_array=[]){
 
         if (empty($password)){
             array_push($errors_array, "Password empty, please provide to continue");
@@ -110,6 +110,10 @@ class Validator {
         // Check for special characters (non-alphanumeric)
         if(!preg_match('/[^A-Za-z0-9]/', $password)){
             array_push($errors_array, "Password must contain at least one special character]");
+        }
+
+        if (!is_null($pass_confirm) && $password !== $pass_confirm) {
+            $errors_array[] = "Passwords do not match.";
         }
 
         return $errors_array;

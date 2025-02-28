@@ -10,9 +10,8 @@ class Settings{
     public $orgUsername = "";
     public $orgPassword = "";
     public $orgConfirmPassword = "";
-    public $orgAddress = "";
+    public $orgTel = "";
     public $orgEmail = "";
-    public $orgPhone = "";
     public $orgVision = "";
     public $orgMission = "";
 
@@ -31,8 +30,8 @@ class Settings{
         $this->orgUsername = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['username']))));
         $this->orgPassword = $_POST['password'];
         $this->orgConfirmPassword = $_POST['confirm_password'];
+        $this->orgTel = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['telephone']))));
         $this->orgEmail = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['email']))));
-        $this->orgPhone = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['org_phone']))));
         $this->orgVision = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['org_vision']))));
         $this->orgMission = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['org_mission']))));
     }
@@ -49,26 +48,32 @@ class Settings{
 
         $new_validator = new Validator();
         $email_errors = $new_validator->validateEmail($this->orgEmail, []);
-        $phone_errors = $new_validator->validatePhoneNumber($this->orgPhone, []);
+        $password_errors = $new_validator->validatePassword($this->orgPassword, $this->orgConfirmPassword, []);
+        $telephone_errors = $new_validator->validatePhoneNumber($this->orgTel, []);
 
         $org_errors = array_merge(
             $email_errors, 
-            $phone_errors, 
+            $password_errors,
+            $telephone_errors
         );
 
         if (count($org_errors) === 0){
             $stmt = "INSERT INTO user_settings (
-                org_name,
-                org_address,
-                org_phone,
-                org_vision,
-                org_mission
-                ) VALUES (?, ?, ?, ?, ?, ?)";
+                name,
+                username,
+                password,
+                telephone,
+                email,
+                vision,
+                mission
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)";
     
             $params = [
                 $this->orgName,
+                $this->orgUsername,
+                password_hash($this->orgPassword, PASSWORD_BCRYPT),
+                $this->orgTel,
                 $this->orgEmail,
-                $this->orgPhone,
                 $this->orgVision,
                 $this->orgMission
             ];
