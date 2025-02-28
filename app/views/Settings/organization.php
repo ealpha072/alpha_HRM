@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-header">
             <div class="float-left">
-                <h5 class="header"><i class="fa fa-plus-circle fa-sm"></i> Organization Information</h5>
+                <h5 class="header"><i class="fa fa-plus-circle fa-sm mr-2"></i>Set Organization Information</h5>
             </div>
         </div>
         <div class="card-body">
@@ -13,41 +13,41 @@
                     <div class="form-group row">
                         <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Name<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="" required>
+                            <input type="text" class="form-control form-control-sm" name="organization_name" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Login Username<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="" required>
+                            <input type="text" class="form-control form-control-sm" name="username" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Login Password<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="password" class="form-control form-control-sm" name="" required>
+                            <input type="password" class="form-control form-control-sm" name="password" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Address<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="" required>
+                            <input type="text" class="form-control form-control-sm" name="address" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Email <sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="email" placeholder="Email" class="form-control form-control-sm" name="">
+                            <input type="email" placeholder="Email" class="form-control form-control-sm" name="email">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Telephone <sup>*</sup></label>
+                        <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Tel <sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="tel" placeholder="Phone Number" class="form-control form-control-sm" name="">
+                            <input type="tel" placeholder="Phone Number" class="form-control form-control-sm" name="telephone">
                         </div>
                     </div>
                     <hr>
@@ -109,7 +109,7 @@
 
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-success btn-sm" name="edit-Hospital-settings" name="edit_org_details">Save</button>
+                                            <button type="submit" class="btn btn-success btn-sm" name="edit_org_details">Save</button>
                                         </div>
                                     </form>
                                 </div>

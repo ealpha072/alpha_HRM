@@ -60,6 +60,14 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif (str_contains($uri, "/alpha_HRM/public/settings")) {
     if (isset($_GET['settings_page']) && $_GET['settings_page'] === "organization") {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_org_details'])) {
+            require_once "app/models/Settings.php";
+            $settings = new Settings();
+            $settings->attach_org_details();
+            $settings_status = $settings->edit_org_details();
+        }
+
         require_once "app/controllers/DashboardController.php";
         require_once "app/controllers/SettingsController.php";
         $dbcontroller = new DashboardController();

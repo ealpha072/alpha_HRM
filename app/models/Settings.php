@@ -50,23 +50,25 @@ class Settings{
         );
 
         if (count($org_errors) === 0){
-            $stmt = "INSERT INTO user_settings (
-                org_name,
-                org_address,
-                org_phone,
-                org_vision,
-                org_mission
-                ) VALUES (?, ?, ?, ?, ?, ?)";
-    
+            $stmt = "UPDATE user_settings 
+            SET 
+                org_name = ?, 
+                org_address = ?, 
+                org_phone = ?, 
+                org_vision = ?, 
+                org_mission = ?
+            WHERE org_name = ?"; // Replace `some_column` with the actual condition
+
             $params = [
                 $this->orgName,
-                $this->orgEmail,
+                $this->orgEmail,  // Make sure this matches `org_address` if it's meant to be an address
                 $this->orgPhone,
                 $this->orgVision,
-                $this->orgMission
+                $this->orgMission,
+                  // Ensure you provide a value for the WHERE condition
             ];
-    
-            $this->db->insert($stmt, $params);
+
+            $this->db->update($stmt, $params);
             unset($_SESSION['msg-success']);
             $_SESSION['msg-success'] = "Organization: " . ucfirst($this->orgName) ." details updated successfully";
             return $_SESSION['msg-success'];
