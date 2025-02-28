@@ -65,7 +65,7 @@ if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
             require_once "app/models/Settings.php";
             $settings = new Settings();
             $settings->attach_org_details();
-            $settings_status = $settings->edit_org_details();
+            $settings_status = $settings->set_org_details();
         }
 
         require_once "app/controllers/DashboardController.php";

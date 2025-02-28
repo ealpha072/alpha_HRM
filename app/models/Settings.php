@@ -42,7 +42,7 @@ class Settings{
         $this->newPassword = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['new_password']))));
     }
  
-    public function edit_org_details(){
+    public function set_org_details(){
 
         $org_errors = [];
 
