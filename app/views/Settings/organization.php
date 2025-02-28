@@ -11,23 +11,25 @@
                 <!--personal card info-->
                 <div class="form-div personal_info">
                     <div class="form-group row">
-                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Name<sup>*</sup></label>
+                        <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Name<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control form-control-sm" name="organization_name" required>
+                            <input type="text" class="form-control form-control-sm" name="personal_email">
+                        </div>
+
+                        <label for="gender" class="col-sm-2 col-form-label col-form-label-sm">System Username<sup>*</sup></label>
+                        <div class="col-sm-4">
+                            <input type="email" class="form-control form-control-sm" name="personal_email">
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Login Username<sup>*</sup></label>
+                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">System Password<sup>*</sup></label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control form-control-sm" name="username" required>
                         </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Login Password<sup>*</sup></label>
+                        <label for="first-name" class="col-sm-2 col-form-label col-form-label-sm">Confirm Password<sup>*</sup></label>
                         <div class="col-sm-4">
-                            <input type="password" class="form-control form-control-sm" name="password" required>
+                            <input type="text" class="form-control form-control-sm" name="username" required>
                         </div>
                     </div>
 
@@ -36,20 +38,26 @@
                         <div class="col-sm-4">
                             <input type="text" class="form-control form-control-sm" name="address" required>
                         </div>
-                    </div>
-
-                    <div class="form-group row">
                         <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Email <sup>*</sup></label>
                         <div class="col-sm-4">
                             <input type="email" placeholder="Email" class="form-control form-control-sm" name="email">
                         </div>
                     </div>
+
                     <div class="form-group row">
-                        <label for="phone-number" class="col-sm-2 col-form-label col-form-label-sm">Organization Tel <sup>*</sup></label>
+                        <label for="" class="col-sm-2 col-form-label col-form-label-sm">Vision</label>
                         <div class="col-sm-4">
-                            <input type="tel" placeholder="Phone Number" class="form-control form-control-sm" name="telephone">
+                            <textarea cols="" rows="" class="form-control form-control-sm" required name="org_vision"></textarea>
+                        </div>
+                        <label for="" class="col-sm-2 col-form-label col-form-label-sm">Mission</label>
+                        <div class="col-sm-4">
+                            <textarea cols="" rows="" class="form-control form-control-sm" required name="org_mission"></textarea>
                         </div>
                     </div>
+
+                    <button type="button" class="btn btn-primary btn-sm" name="set_org_details">
+                        Set Org Info
+                    </button>
                     <hr>
                     <div class="submit">
                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">

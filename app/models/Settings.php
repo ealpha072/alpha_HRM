@@ -7,6 +7,10 @@ class Settings{
     private $db;
 
     public $orgName = "";
+    public $orgUsername = "";
+    public $orgPassword = "";
+    public $orgConfirmPassword = "";
+    public $orgAddress = "";
     public $orgEmail = "";
     public $orgPhone = "";
     public $orgVision = "";
@@ -23,8 +27,11 @@ class Settings{
     }
 
     public function attach_org_details() {
-        $this->orgName = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['org_name']))));
-        $this->orgEmail = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['org_email']))));
+        $this->orgName = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['name']))));
+        $this->orgUsername = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['username']))));
+        $this->orgPassword = $_POST['password'];
+        $this->orgConfirmPassword = $_POST['confirm_password'];
+        $this->orgEmail = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['email']))));
         $this->orgPhone = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['org_phone']))));
         $this->orgVision = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['org_vision']))));
         $this->orgMission = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['org_mission']))));
@@ -50,24 +57,22 @@ class Settings{
         );
 
         if (count($org_errors) === 0){
-            $stmt = "UPDATE user_settings 
-            SET 
-                org_name = ?, 
-                org_address = ?, 
-                org_phone = ?, 
-                org_vision = ?, 
-                org_mission = ?
-            WHERE org_name = ?"; // Replace `some_column` with the actual condition
-
+            $stmt = "INSERT INTO user_settings (
+                org_name,
+                org_address,
+                org_phone,
+                org_vision,
+                org_mission
+                ) VALUES (?, ?, ?, ?, ?, ?)";
+    
             $params = [
                 $this->orgName,
-                $this->orgEmail,  // Make sure this matches `org_address` if it's meant to be an address
+                $this->orgEmail,
                 $this->orgPhone,
                 $this->orgVision,
-                $this->orgMission,
-                  // Ensure you provide a value for the WHERE condition
+                $this->orgMission
             ];
-
+    
             $this->db->update($stmt, $params);
             unset($_SESSION['msg-success']);
             $_SESSION['msg-success'] = "Organization: " . ucfirst($this->orgName) ." details updated successfully";
