@@ -2,10 +2,14 @@
 $uri = $_SERVER['REQUEST_URI'];
 
 if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
-    require_once "app/controllers/DashboardController.php";
-    $controller = new DashboardController();
+    require_once "app/controllers/LoginController.php";
+    $controller = new LoginController();
     $controller->index();
     require_once __DIR__ . "./public/assets/footer.php";
+    /*require_once "app/controllers/DashboardController.php";
+    $controller = new DashboardController();
+    $controller->index();
+    require_once __DIR__ . "./public/assets/footer.php";*/
 } elseif ($uri === "/alpha_HRM/public/employees") {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_employee'])) {

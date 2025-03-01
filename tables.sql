@@ -25,3 +25,16 @@ CREATE TABLE "departments" (
 	"department_name"	TEXT UNIQUE,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
+
+CREATE TABLE "org_details" (
+	"id"	INTEGER,
+	"name"	TEXT NOT NULL,
+	"username"	TEXT NOT NULL UNIQUE,
+	"password"	TEXT NOT NULL,
+	"telephone"	TEXT NOT NULL,
+	"email"	TEXT NOT NULL UNIQUE,
+	"vision"	TEXT,
+	"mission"	TEXT,
+	"created_at"	DATETIME DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);

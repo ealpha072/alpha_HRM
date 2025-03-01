@@ -34,6 +34,7 @@
                         <label for="last-name" class="col-sm-2 col-form-label col-form-label-sm">Organization Name<sup>*</sup></label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control form-control-sm" name="name">
+                            <small id="emailHelp" class="form-text text-muted">No special characters allowed</small>
                         </div>
 
                         <label for="gender" class="col-sm-2 col-form-label col-form-label-sm">System Username<sup>*</sup></label>

@@ -26,8 +26,8 @@ class Settings{
     }
 
     public function attach_org_details() {
-        $this->orgName = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['name']))));
-        $this->orgUsername = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['username']))));
+        $this->orgName = htmlspecialchars(strip_tags(ucfirst($_POST['name'])));
+        $this->orgUsername = htmlspecialchars(strip_tags(ucfirst($_POST['username'])));
         $this->orgPassword = $_POST['password'];
         $this->orgConfirmPassword = $_POST['confirm_password'];
         $this->orgTel = strtolower(htmlspecialchars(strip_tags(ucfirst($_POST['telephone']))));
