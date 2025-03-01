@@ -6,5 +6,9 @@ class LoginController extends Controller {
         // Load the dashboard view
         $this->view("/login");
     }
+
+    public function logout(){
+        $this->view("/logout");
+    }
 }
 ?>

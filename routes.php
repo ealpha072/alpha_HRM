@@ -1,7 +1,11 @@
 <?php
 $uri = $_SERVER['REQUEST_URI'];
 
-if ($uri === '/alpha_HRM/public/') {
+// if (!isset($_SESSION["user_name"])){
+//     $uri = "/alpha_HRM/public";
+// }
+
+if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     session_unset(); // Unset all session variables
     session_destroy(); // Destroy the session
 
@@ -133,6 +137,15 @@ if ($uri === '/alpha_HRM/public/') {
         $settingscontroller->leavetypes();
         require_once __DIR__ .  "./public/assets/footer.php";
     }
+} elseif ($uri === "/alpha_HRM/public/logout" ){
+    session_unset(); // Unset all session variables
+    session_destroy(); // Destroy the session
+
+    require_once "public/assets/header.php";
+    require_once "app/controllers/LoginController.php";
+    $controller = new LoginController();
+    $controller->logout();
+    require_once __DIR__ . "./public/assets/footer.php";
 } else {
     echo $_SERVER['REQUEST_URI'];
     echo "<br>";
