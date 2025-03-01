@@ -1,24 +1,37 @@
 <?php
 $uri = $_SERVER['REQUEST_URI'];
 
-if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
+if ($uri === '/alpha_HRM/public/') {
+    session_unset(); // Unset all session variables
+    session_destroy(); // Destroy the session
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login_user'])) {
         require_once "app/models/Login.php";
         $user = new User();
         $user->attachProps();
         $login_status = $user->login_user();
-        var_dump($login_status);
+        
+        if(isset($_SESSION["user_name"])){
+            require_once "public/assets/header.php";
+            require_once "app/controllers/LoginswitchController.php";
+            $controller = new LoginSwitchController();
+            $controller->index();
+            require_once __DIR__ . "./public/assets/footer.php";
+
+            header("refresh:3; url=/alpha_HRM/public/home");
+            exit();
+        }
     }
 
     require_once "app/controllers/LoginController.php";
     $controller = new LoginController();
     $controller->index();
     require_once __DIR__ . "./public/assets/footer.php";
-    /*require_once "app/controllers/DashboardController.php";
+} elseif ($uri === "/alpha_HRM/public/home") {
+    require_once "app/controllers/DashboardController.php";
     $controller = new DashboardController();
     $controller->index();
-    require_once __DIR__ . "./public/assets/footer.php";*/
+    require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/employees") {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_employee'])) {

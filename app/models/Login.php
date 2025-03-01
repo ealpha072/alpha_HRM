@@ -19,11 +19,6 @@ class User{
     }
 
     public function login_user(){
-        echo $this->userName;
-        echo "<br>";
-        echo $this->password;
-        echo "<br>";
-        echo "<br>";
 
         $login_errors = [];
 
@@ -31,9 +26,7 @@ class User{
         $stmt = "SELECT * FROM org_details WHERE username = ?";
         $params = [$this->userName];
         $results = $this->db->select($stmt, $params);
-        var_dump($results);
-        echo "<br>";
-
+        
         if (count($results) !== 1 ){
             array_push($login_errors, "Wrong username or password (count error), please try again");
             unset($_SESSION['msg-errors']);
@@ -43,7 +36,8 @@ class User{
             if(password_verify($this->password, $results[0]["password"])){
                 unset($_SESSION['msg-success']);
                 $_SESSION['msg-success'] = "Login successful, taking you to home page";
-                return $_SESSION['msg-success'];
+                $_SESSION["user_name"] = $results[0]["username"];
+                return $_SESSION['user_name'];
             } else {
                 array_push($login_errors, "Wrong username or password (password error), please try again");
                 unset($_SESSION['msg-errors']);
