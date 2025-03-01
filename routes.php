@@ -2,6 +2,15 @@
 $uri = $_SERVER['REQUEST_URI'];
 
 if ($uri === '/alpha_HRM/public/' || $uri === "/alpha_HRM/public/home") {
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login_user'])) {
+        require_once "app/models/Login.php";
+        $user = new User();
+        $user->attachProps();
+        $login_status = $user->login_user();
+        var_dump($login_status);
+    }
+
     require_once "app/controllers/LoginController.php";
     $controller = new LoginController();
     $controller->index();

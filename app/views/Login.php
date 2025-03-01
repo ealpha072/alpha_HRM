@@ -5,7 +5,7 @@ require_once __DIR__ . "../../../public/assets/header.php";  // Include header i
 <div class="row h-100 justify-content-center align-items-center">
         <div class="col-10 col-md-8 col-lg-4">
             <h3 class="text-center">Login</h3>
-            <form action="../config/formsprocess.php" method="post">
+            <form action="<?php $_SERVER['REQUEST_URI'] ?>" method="post">
                 <div class="card-body">
                     <div class="form-group input-group mb-3">
                     <div class="input-group-prepend">
@@ -19,12 +19,12 @@ require_once __DIR__ . "../../../public/assets/header.php";  // Include header i
                         <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock" aria-hidden="true"></i></span>
                     </div>
                         <!--<label for="password">Password</label>-->
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="password" required value="Ealpha072@">
+                        <input type="password" class="form-control" placeholder="Password" name="password" required value="Ealpha072@">
                     </div>
 
                     <div class="row">
                         <div class="col">
-                            <button type="submit" class="btn btn-success" name="login" id="loginbtn"><i class="fa fa-sign-in"></i> <span>Login</span>
+                            <button type="submit" class="btn btn-success" name="login_user" id="loginbtn"><i class="fa fa-sign-in"></i> <span>Login</span>
                         </button>
                         </div>
                     </div>
