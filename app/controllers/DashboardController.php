@@ -7,5 +7,9 @@ class DashboardController extends Controller {
         // Load the dashboard view
         $this->view("dashboard/index");
     }
+    
+    public function home(){
+        $this->view("dashboard/dashboard");
+    }
 }
 ?>

@@ -29,8 +29,9 @@ if ($uri === '/alpha_HRM/public/') {
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/home") {
     require_once "app/controllers/DashboardController.php";
-    $controller = new DashboardController();
-    $controller->index();
+    $wrappercontroller = new DashboardController();
+    $wrappercontroller->index();
+    $wrappercontroller->home();
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/employees") {
 
