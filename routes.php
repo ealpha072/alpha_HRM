@@ -27,7 +27,7 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/home") {
     if (!isset($_SESSION["id"])){
-        header("refresh:3; url=/alpha_HRM/public/");
+        header("refresh:1; url=/alpha_HRM/public/");
         exit();
     }
     
@@ -38,7 +38,7 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/employees") {
     if (!isset($_SESSION["id"])){
-        header("refresh:3; url=/alpha_HRM/public/");
+        header("refresh:1; url=/alpha_HRM/public/");
         exit();
     }
     
@@ -59,7 +59,7 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/leave") {
     if (!isset($_SESSION["id"])){
-        header("refresh:3; url=/alpha_HRM/public/");
+        header("refresh:1; url=/alpha_HRM/public/");
         exit();
     }    
 
@@ -80,7 +80,7 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
 
 } elseif ($uri === "/alpha_HRM/public/payroll") {
     if (!isset($_SESSION["id"])){
-        header("refresh:3; url=/alpha_HRM/public/");
+        header("refresh:1; url=/alpha_HRM/public/");
         exit();
     }
     
@@ -104,7 +104,7 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif (str_contains($uri, "/alpha_HRM/public/settings")) {
     if (!isset($_SESSION["id"])){
-        header("refresh:3; url=/alpha_HRM/public/");
+        header("refresh:1; url=/alpha_HRM/public/");
         exit();
     }
     
@@ -165,7 +165,7 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     $controller->logout();
     require_once __DIR__ . "./public/assets/footer.php";
 } else {
-    echo $_SERVER['REQUEST_URI'];
-    echo "<br>";
-    echo "404 - Page Not Found";
+    require_once "public/assets/header.php";
+    require_once "app/views/Pagenotfound.php";
+    require_once __DIR__ . "./public/assets/footer.php";
 }
