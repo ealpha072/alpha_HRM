@@ -1,13 +1,7 @@
 <?php
 $uri = $_SERVER['REQUEST_URI'];
 
-// if (!isset($_SESSION["user_name"])){
-//     $uri = "/alpha_HRM/public";
-// }
-
 if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
-    session_unset(); // Unset all session variables
-    session_destroy(); // Destroy the session
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login_user'])) {
         require_once "app/models/Login.php";
@@ -32,12 +26,22 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     $controller->index();
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/home") {
+    if (!isset($_SESSION["id"])){
+        header("refresh:3; url=/alpha_HRM/public/");
+        exit();
+    }
+    
     require_once "app/controllers/DashboardController.php";
     $wrappercontroller = new DashboardController();
     $wrappercontroller->index();
     $wrappercontroller->home();
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/employees") {
+    if (!isset($_SESSION["id"])){
+        header("refresh:3; url=/alpha_HRM/public/");
+        exit();
+    }
+    
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_employee'])) {
         require_once "app/models/Employee.php";
@@ -54,6 +58,10 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     $employeecontroller->add();
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif ($uri === "/alpha_HRM/public/leave") {
+    if (!isset($_SESSION["id"])){
+        header("refresh:3; url=/alpha_HRM/public/");
+        exit();
+    }    
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_leave'])) {
         require_once "app/models/Leave.php";
@@ -71,6 +79,11 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     require_once __DIR__ . "./public/assets/footer.php";
 
 } elseif ($uri === "/alpha_HRM/public/payroll") {
+    if (!isset($_SESSION["id"])){
+        header("refresh:3; url=/alpha_HRM/public/");
+        exit();
+    }
+    
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['set_base_salary'])) {
         // var_dump($_POST);
@@ -90,6 +103,11 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     $payrollcontroller->add();
     require_once __DIR__ . "./public/assets/footer.php";
 } elseif (str_contains($uri, "/alpha_HRM/public/settings")) {
+    if (!isset($_SESSION["id"])){
+        header("refresh:3; url=/alpha_HRM/public/");
+        exit();
+    }
+    
     if (isset($_GET['settings_page']) && $_GET['settings_page'] === "organization") {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['set_org_details'])) {
