@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "../../../../public/assets/header.php";  // Include header if exists
+    require_once __DIR__ . "../../../../public/assets/header.php";  // Include header if exists
 ?>
 
 <div class="wrapper">
@@ -11,7 +11,7 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="home"><i class="fas fa-server mr-2"></i>Admin Dashboard</a>
+                    <a href="home"><i class="fas fa-server mr-2"></i>Dashboard</a>
                 </li>
                 <li>
                     <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user-circle mr-2"></i> Staff</a>
@@ -20,7 +20,7 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
                             <a href="employees"><i class="fa fa-user-plus fa-sm mr-2"></i>Add Staff</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user-plus fa-sm mr-2"></i>Staff Details</a>
+                            <a href="#"><i class="fa fa-info-circle fa-sm mr-2"></i>Staff Details</a>
                         </li>
                     </ul>
                 </li>
@@ -29,7 +29,7 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
                     <a href="#leaveSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fa fa-calendar mr-2"></i> Leave Tracker</a>
                     <ul class="collapse list-unstyled" id="leaveSubmenu">
                         <li>
-                            <a href="leave"><i class="fa fa-calendar" aria-hidden="true"></i> Add Leave</a>
+                            <a href="leave"><i class="fa fa-plus-square" aria-hidden="true"></i> Add Leave</a>
                         </li>
                         <li>
                             <a href="#"> <i class="fa fa-calendar" aria-hidden="true"></i> Employee Leave</a>
@@ -39,29 +39,29 @@ require_once __DIR__ . "../../../../public/assets/header.php";  // Include heade
                 </li>
 
                 <li>
-                    <a href="#payrollSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fa fa-calendar mr-2"></i> Payroll</a>
+                    <a href="#payrollSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fa fa-money mr-2"></i> Payroll</a>
                     <ul class="collapse list-unstyled" id="payrollSubmenu">
                         <li>
-                            <a href="payroll"><i class="fa fa-calendar" aria-hidden="true"></i> Set Salary</a>
+                            <a href="payroll"><i class="fa fa-plus-square mr-2" aria-hidden="true"></i> Set Salary</a>
                         </li>
                         <li>
-                            <a href="#"> <i class="fa fa-calendar" aria-hidden="true"></i> Pay Slip</a>
+                            <a href="#"> <i class="fa fa-money mr-2" aria-hidden="true"></i> Pay Slip</a>
                         </li>
                         
                     </ul>
                 </li>
 
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Settings</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cogs mr-2" aria-hidden="true"></i> Settings</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="settings?settings_page=organization">Organization Details</a>
+                            <a href="settings?settings_page=organization"><i class="fa fa-info mr-2" aria-hidden="true"></i>Organization Details</a>
                         </li>
                         <li>
-                            <a href="settings?settings_page=department">Department</a>
+                            <a href="settings?settings_page=department"><i class="fa fa-building mr-2" aria-hidden="true"></i>Department</a>
                         </li>
                         <li>
-                            <a href="settings?settings_page=leave_type">Leave Types</a>
+                            <a href="settings?settings_page=leave_type"><i class="fa fa-calendar mr-2" aria-hidden="true"></i>Leave Types</a>
                         </li>
                     </ul>
                 </li>

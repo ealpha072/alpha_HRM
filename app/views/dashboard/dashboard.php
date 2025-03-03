@@ -6,10 +6,5 @@
     </div>
     <div class="card-body">
         <h2>This is the view</h2>
-        <?php 
-            echo  $_SESSION['msg-success']; 
-            echo "<br>";
-            echo  $_SESSION['id'];
-        ?>
     </div>
 </div>
