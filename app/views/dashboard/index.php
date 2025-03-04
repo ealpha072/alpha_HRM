@@ -20,7 +20,7 @@
                             <a href="employees"><i class="fa fa-user-plus fa-sm mr-2"></i>Add Staff</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-info-circle fa-sm mr-2"></i>Staff Details</a>
+                            <a href="employees?page=manage"><i class="fa fa-info-circle fa-sm mr-2"></i>Staff Details</a>
                         </li>
                     </ul>
                 </li>

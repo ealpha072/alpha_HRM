@@ -35,8 +35,6 @@ class User{
         } else {
             if(password_verify($this->password, $results[0]["password"])){
                 $_SESSION["id"] = session_id();
-                echo $_SESSION["id"];
-                $_SESSION['msg-success'] = "Login successful, taking you to home page";
                 $_SESSION["user_name"] = $results[0]["username"];
                 return $_SESSION['user_name'];
             } else {

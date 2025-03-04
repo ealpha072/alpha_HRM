@@ -36,7 +36,7 @@ if ($uri === '/alpha_HRM/public/' || $uri === '/alpha_HRM/public/login') {
     $wrappercontroller->index();
     $wrappercontroller->home();
     require_once __DIR__ . "./public/assets/footer.php";
-} elseif ($uri === "/alpha_HRM/public/employees") {
+} elseif (str_contains($uri, "/alpha_HRM/public/employees")) {
     if (!isset($_SESSION["id"])){
         header("refresh:1; url=/alpha_HRM/public/");
         exit();
